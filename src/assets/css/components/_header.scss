@@ -1,0 +1,56 @@
+.c-header {
+  padding: 0 2rem;
+  color: #fff;
+  @include flex_row_between;
+  &__logo {
+    @include flex_align_center;
+  }
+  &__mid {
+    flex: 0 1 728px;
+  }
+}
+
+.c-menutrigger {
+  @include wh(20px, 15px);
+  position: relative;
+  margin-right: 10px;
+  span {
+    display: block;
+    @include wh(100%, 1px);
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    &:nth-of-type(1) {
+      top: 0;
+    }
+    &:nth-of-type(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:nth-of-type(3) {
+      bottom: 0;
+    }
+  }
+}
+
+.c-categories-bar {
+  padding: 0 2rem;
+  @include flex_align_center;
+  border-top: $border_input;
+  border-bottom: $border_input;
+  a {
+    display: inline-block;
+    color: $text_primary;
+    border-radius: $br_link;
+    background-color: $btn_bg1;
+    font-weight: 500;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    &:hover {
+      background-color: $btn_hover1;
+    }
+    & + a {
+      margin-left: 1rem;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+@import "./base/reset";
+@import "./base/var";
+@import "./base/mixins";
+@import "./base/ant";
+// COMPONENTS
+@import "./components/components";
+@import "./components/header";
+@import "./components/link";
+@import "./components/form";
+@import "./components/video";
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 10px;
+  }
+}
+body {
+  background-color: $primary_dark;
+}
+.l-main {
+  position: relative;
+  overflow-x: hidden;
+  .c-header,
+  .c-categories-bar,
+  .c-side-bar {
+    position: fixed;
+    z-index: 300;
+  }
+  .c-header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header_height;
+    background-color: $primary_trans;
+  }
+  .c-categories-bar {
+    height: $header_height;
+    top: $header_height;
+    left: $sidebar_width;
+    right: 0;
+    background-color: $primary_trans;
+  }
+  .c-side-bar {
+    top: $header_height;
+    left: 0;
+    bottom: 0;
+    width: $sidebar_width;
+    color: #fff;
+    font-size: 2rem;
+    background-color: $primary_trans;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 10px;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #aaa;
+      border-radius: 10px;
+    }
+  }
+}
+
+.c-content {
+  margin-top: calc($header_height * 2);
+  margin-left: $sidebar_width;
+  padding: 20px;
+}

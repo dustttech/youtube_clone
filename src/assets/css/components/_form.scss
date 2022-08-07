@@ -1,0 +1,35 @@
+.c-form {
+  width: 100%;
+  &__group {
+    display: flex;
+    input {
+      flex-grow: 1;
+    }
+  }
+  input,
+  button {
+    display: inline-block;
+    outline: none;
+    border: none;
+  }
+  input {
+    background-color: transparent;
+    border: $border_input;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.4rem;
+  }
+  button {
+    cursor: pointer;
+  }
+  &__submit {
+    &-search {
+      background-color: $primary_white;
+      @include flex_center_abs;
+      padding: 0.5rem 1rem;
+    }
+  }
+  &__icon {
+    display: inline-block;
+    width: 30px;
+  }
+}

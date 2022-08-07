@@ -1,0 +1,18 @@
+.c-linkicon {
+  display: block;
+  width: 100%;
+  color: $text_primary;
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  padding: 10px 20px;
+  &:hover {
+    color: $text_primary;
+    background-color: $light_hover;
+  }
+  .icon {
+    display: inline-block;
+    width: 24px;
+    margin-right: 2rem;
+  }
+}

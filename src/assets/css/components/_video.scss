@@ -1,0 +1,137 @@
+.c-videoList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: $text_primary;
+  li {
+    width: calc((100% - 60px) / 4);
+    margin-bottom: 4rem;
+  }
+}
+.c-video {
+  &__container {
+    position: relative;
+    @include flex_column;
+  }
+  &__info {
+    flex-grow: 1;
+    @include flex_column;
+    padding: 1rem;
+  }
+  &__header {
+    @include flex_align_start;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  &__thumbnail {
+    display: block;
+    height: 168px;
+    position: relative;
+    img {
+      @include wh100;
+    }
+    &-preview {
+      width: 100%;
+      max-width: unset;
+    }
+
+    .c-thumbnail__hover-p {
+      opacity: 0;
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      transition: $trans_02;
+      font-weight: 500;
+      font-size: 1rem;
+      color: $text_primary;
+      background-color: $primary_dark;
+      padding: 0.5rem;
+    }
+    &:hover {
+      .c-thumbnail__hover-p {
+        opacity: 1;
+      }
+    }
+  }
+  &__avt {
+    display: block;
+    @include wh(36px, 36px);
+    flex-shrink: 0;
+    border-radius: 50%;
+    img {
+      @include wh100;
+    }
+  }
+  &__meta {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  &__title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: $text_primary;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 20px;
+    margin-bottom: 5px;
+    &:hover {
+      color: currentColor;
+    }
+  }
+  &__txt {
+    color: $text_primary_second;
+    font-weight: 400;
+    font-size: 1.2rem;
+    &-hover {
+      &:hover {
+        color: $text_primary;
+      }
+    }
+  }
+  &__poster {
+    display: block;
+    letter-spacing: 0.05em;
+    margin-bottom: 5px;
+  }
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    a {
+      display: block;
+      padding: 1rem 1rem;
+      background-color: $primary_light;
+      color: $text_primary_second;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+    }
+    a + a {
+      margin-top: 1rem;
+    }
+  }
+  // PREVIEW MODAL
+  &__preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    background-color: $primary_trans;
+    transition: $trans_04;
+    &-wrapper {
+      position: relative;
+    }
+    &.isShow {
+      opacity: 1;
+      z-index: 1000;
+      visibility: visible;
+    }
+    .c-video__btns {
+      margin-top: auto;
+    }
+  }
+}
